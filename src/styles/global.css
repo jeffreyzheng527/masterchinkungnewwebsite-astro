@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 之后可以将光标隐藏、自定义字体等基础样式放在这里 */
