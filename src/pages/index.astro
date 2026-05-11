@@ -33,7 +33,6 @@ import '../styles/global.css';
 
     .font-serif-tc { font-family: var(--font-serif); }
 
-    /* 艺术化光标 */
     #cursor-ring {
       position: fixed; top: 0; left: 0; z-index: 9999;
       width: 4px; height: 4px; border: 1px solid rgba(212, 168, 67, 0); border-radius: 50%;
@@ -48,7 +47,6 @@ import '../styles/global.css';
       background: linear-gradient(90deg, transparent, var(--gold-bright), var(--gold-deep));
     }
 
-    /* 原版精准的 Hero 遮罩 */
     .hero-bg-overlay {
       position: absolute; inset: 0; z-index: 2;
       background: linear-gradient(to bottom, rgba(15,10,3,0.7) 0%, rgba(15,10,3,0.25) 30%, rgba(15,10,3,0.35) 55%, rgba(15,10,3,0.9) 100%);
@@ -60,7 +58,6 @@ import '../styles/global.css';
     }
     @keyframes buddhaGlow { 0% { opacity: 0.8; } 100% { opacity: 1; } }
 
-    /* 导航栏下拉样式 */
     .nav-scrolled {
       background: rgba(253, 246, 227, 0.98); backdrop-filter: blur(20px); 
       box-shadow: 0 4px 30px rgba(26,18,8,0.08), 0 1px 0 rgba(180,130,30,0.12);
@@ -798,7 +795,6 @@ import '../styles/global.css';
       });
     });
 
-    // 修正点：完美解决横向滑动的 3 个 BUG (滑动过快、死区卡顿、与滚轮脱节)
     const hContainer = document.getElementById("hTimeline");
     const getScrollAmount = () => -(hContainer ? hContainer.scrollWidth - window.innerWidth : 0);
     
@@ -808,8 +804,8 @@ import '../styles/global.css';
       scrollTrigger: {
         trigger: "#footprints",
         pin: true,
-        scrub: true, // 配合 Lenis 必须用 true，消除死区
-        end: () => `+=${getScrollAmount() * -1}`, // 滚动距离精确匹配物理像素距离
+        scrub: true, 
+        end: () => `+=${getScrollAmount() * -1}`, 
         invalidateOnRefresh: true
       }
     });
